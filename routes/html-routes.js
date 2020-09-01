@@ -10,7 +10,9 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    else {
+      res.sendFile(path.join(__dirname, "../public/signup.html"));
+    }
   });
 
   app.get("/login", (req, res) => {
@@ -18,7 +20,9 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    else {
+      res.sendFile(path.join(__dirname, "../public/login.html"));
+    }
   });
 
   // Route for logging user out
